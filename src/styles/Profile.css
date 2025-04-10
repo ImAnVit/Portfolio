@@ -1,0 +1,15 @@
+.profile img {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+}
+
+.profile h1 {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.profile p {
+  color: #718096; /* Tailwind's gray-600 */
+}

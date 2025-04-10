@@ -1,4 +1,5 @@
 import { User, Code, Briefcase, GraduationCap, Languages, Heart } from 'lucide-react';
+import profileImage from '../public/images/profile.jpg';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/images/profile.jpg"
+                src={profileImage}
                 alt="Vitaly Andriyko"
                 className="rounded-lg shadow-xl w-full max-w-md mx-auto"
               />
@@ -265,7 +266,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-gray-900 py-8 px-6">
         <div className="container mx-auto text-center text-gray-400">
-          <p>© 2025 Vitaly Andriyko. All rights reserved.</p>
+          <p> 2025 Vitaly Andriyko. All rights reserved.</p>
         </div>
       </footer>
     </div>

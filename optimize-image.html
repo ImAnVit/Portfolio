@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Optimizer</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .controls { margin: 20px 0; }
+    canvas { max-width: 100%; border: 1px solid #ccc; }
+    button { padding: 10px 15px; background: #0066cc; color: white; border: none; cursor: pointer; }
+    input, select { padding: 8px; margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Image Optimizer</h1>
+  
+  <div class="controls">
+    <label for="quality">Quality (1-100):</label>
+    <input type="number" id="quality" min="1" max="100" value="70">
+    
+    <label for="maxWidth">Max Width:</label>
+    <input type="number" id="maxWidth" min="100" max="2000" value="800">
+    
+    <button id="optimize">Optimize</button>
+    <button id="download">Download Optimized Image</button>
+  </div>
+  
+  <div>
+    <h3>Original Image</h3>
+    <img id="original" src="/images/profile.jpg" alt="Original Image">
+    <p id="originalSize"></p>
+  </div>
+  
+  <div>
+    <h3>Optimized Preview</h3>
+    <canvas id="preview"></canvas>
+    <p id="newSize"></p>
+  </div>
+  
+  <script>
+    const originalImg = document.getElementById('original');
+    const originalSizeEl = document.getElementById('originalSize');
+    const canvas = document.getElementById('preview');
+    const ctx = canvas.getContext('2d');
+    const qualityInput = document.getElementById('quality');
+    const maxWidthInput = document.getElementById('maxWidth');
+    const optimizeBtn = document.getElementById('optimize');
+    const downloadBtn = document.getElementById('download');
+    const newSizeEl = document.getElementById('newSize');
+    
+    let optimizedBlob = null;
+    
+    // Display original image size
+    originalImg.onload = function() {
+      fetch('/images/profile.jpg')
+        .then(response => {
+          const size = response.headers.get('content-length');
+          originalSizeEl.textContent = `Original size: ${(size / 1024).toFixed(2)} KB`;
+        });
+    };
+    
+    function optimizeImage() {
+      const quality = qualityInput.value / 100;
+      const maxWidth = parseInt(maxWidthInput.value);
+      
+      // Calculate new dimensions
+      let width = originalImg.naturalWidth;
+      let height = originalImg.naturalHeight;
+      
+      if (width > maxWidth) {
+        const ratio = maxWidth / width;
+        width = maxWidth;
+        height = Math.floor(height * ratio);
+      }
+      
+      // Set canvas size
+      canvas.width = width;
+      canvas.height = height;
+      
+      // Draw image on canvas
+      ctx.drawImage(originalImg, 0, 0, width, height);
+      
+      // Convert to blob
+      canvas.toBlob(blob => {
+        optimizedBlob = blob;
+        newSizeEl.textContent = `Optimized size: ${(blob.size / 1024).toFixed(2)} KB`;
+      }, 'image/jpeg', quality);
+    }
+    
+    optimizeBtn.addEventListener('click', optimizeImage);
+    
+    downloadBtn.addEventListener('click', () => {
+      if (!optimizedBlob) {
+        alert('Please optimize the image first');
+        return;
+      }
+      
+      const url = URL.createObjectURL(optimizedBlob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'profile-optimized.jpg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

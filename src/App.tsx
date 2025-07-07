@@ -59,9 +59,9 @@ function App() {
                       <p className="text-gray-400">09/2018–Present</p>
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                      <li>Led a team of educators to implement engaging learning programs for students</li>
-                      <li>Designed and executed customized lesson plans to improve student performance</li>
-                      <li>Managed administrative tasks, curriculum development, and classroom operations</li>
+                      <li>Led a team of educators to implement engaging learning programs for students.</li>
+                      <li>Designed and executed customized lesson plans to improve student performance.</li>
+                      <li>Managed administrative tasks, curriculum development, and classroom operations.</li>
                     </ul>
                   </div>
 
@@ -71,9 +71,9 @@ function App() {
                       <p className="text-gray-400">10/2014–08/2018</p>
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                      <li>Supervised IT operations and implemented strategic technology solutions</li>
-                      <li>Led a team of developers and engineers to optimize business processes</li>
-                      <li>Developed and managed IT infrastructure, ensuring system security and efficiency</li>
+                      <li>Supervised IT operations and implemented strategic technology solutions.</li>
+                      <li>Led a team of developers and engineers to optimize business processes.</li>
+                      <li>Developed and managed IT infrastructure, ensuring system security and efficiency.</li>
                     </ul>
                   </div>
 
@@ -83,8 +83,8 @@ function App() {
                       <p className="text-gray-400">03/2014–08/2014</p>
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                      <li>Conducted data analysis and market research to improve business decision-making</li>
-                      <li>Provided insights and reports to optimize company strategies</li>
+                      <li>Conducted data analysis and market research to improve business decision-making.</li>
+                      <li>Provided insights and reports to optimize company strategies.</li>
                     </ul>
                   </div>
 
@@ -94,8 +94,8 @@ function App() {
                       <p className="text-gray-400">01/2012–03/2014</p>
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                      <li>Conducted research in economic and geological studies, analyzing large data sets</li>
-                      <li>Published research papers and collaborated with academic institutions</li>
+                      <li>Conducted research in economic and geological studies, analyzing large data sets.</li>
+                      <li>Published research papers and collaborated with academic institutions.</li>
                     </ul>
                   </div>
 
@@ -105,8 +105,8 @@ function App() {
                       <p className="text-gray-400">01/2012–03/2014</p>
                     </div>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                      <li>Coordinated and executed international projects, managing multicultural teams</li>
-                      <li>Developed strategic initiatives to promote leadership and skill-building</li>
+                      <li>Coordinated and executed international projects, managing multicultural teams.</li>
+                      <li>Developed strategic initiatives to promote leadership and skill-building.</li>
                     </ul>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ function App() {
                   </div>
                   <div className="bg-gray-800/50 p-6 rounded-lg">
                     <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold">Master’s in Geology, Donetsk National Technical University</h3>
+                      <h3 className="text-xl font-bold">Master’s in Engineering, Donetsk National Technical University</h3>
                       <p className="text-gray-400">09/2006–01/2012</p>
                     </div>
                     <p className="text-gray-300">
@@ -154,7 +154,7 @@ function App() {
                       <li>Teaching Business English and Teaching Young Learners</li>
                       <li>TEFL/TESL</li>
                       <li>Professional retraining with the qualification “Coach/Teacher of physical culture and sports”</li>
-                      <li>Diving: Open water</li>
+                      <li>Diving: Open water/Advance Open water</li>
                     </ul>
                   </div>
                 </div>
@@ -174,7 +174,10 @@ function App() {
                       {[
                         "Computer Skills",
                         "Microsoft Office",
-                        "Coding (python, html, css etc)",
+                        "Python",
+                        "Java Script",
+                        "HTNL",
+                        "CSS",
                         "WeChat Development Tool",
                         "Blender",
                         "Photoshop",
